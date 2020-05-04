@@ -1,0 +1,97 @@
+object ScreenShootForm: TScreenShootForm
+  Left = 0
+  Height = 507
+  Top = 0
+  Width = 634
+  AlphaBlendValue = 0
+  BorderStyle = bsNone
+  ClientHeight = 507
+  ClientWidth = 634
+  DefaultMonitor = dmMainForm
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  OnMouseDown = FormMouseDown
+  OnMouseMove = FormMouseMove
+  OnMouseUp = FormMouseUp
+  OnPaint = FormPaint
+  OnShow = FormShow
+  Position = poDefault
+  ShowInTaskBar = stNever
+  LCLVersion = '2.0.6.0'
+  WindowState = wsFullScreen
+  object pnlMagnifier: TPanel
+    Left = 232
+    Height = 376
+    Top = 32
+    Width = 240
+    BevelOuter = bvNone
+    ClientHeight = 376
+    ClientWidth = 240
+    Color = clMoneyGreen
+    ParentColor = False
+    TabOrder = 0
+    object pnlMagnifierView: TPanel
+      Left = 0
+      Height = 240
+      Top = 26
+      Width = 240
+      Align = alTop
+      BevelOuter = bvNone
+      Caption = 'pnlMagnifierView'
+      Color = clBlack
+      ParentColor = False
+      TabOrder = 0
+      OnPaint = pnlMagnifierViewPaint
+    end
+    object Label1: TLabel
+      Left = 4
+      Height = 102
+      Top = 270
+      Width = 232
+      Align = alClient
+      BorderSpacing.Around = 4
+      Caption = 'Sélectionnez et ajustez un zone de capture avec la souris et le bouton gauche appuyé'#13#10#13#10'Appuyez sur : ESC pour quitter'#13#10'Appuyez sur ENTREE pour valider la capture et retourner à l''application.'
+      Color = clMoneyGreen
+      ParentColor = False
+      Transparent = False
+      WordWrap = True
+    end
+    object pnlSelectInfo: TPanel
+      Left = 0
+      Height = 26
+      Top = 0
+      Width = 240
+      Align = alTop
+      ClientHeight = 26
+      ClientWidth = 240
+      Color = clSkyBlue
+      ParentColor = False
+      TabOrder = 1
+      object lblSelectInfo: TLabel
+        Left = 3
+        Height = 20
+        Top = 3
+        Width = 234
+        Align = alClient
+        Alignment = taCenter
+        AutoSize = False
+        BorderSpacing.Around = 2
+        Font.Height = 24
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+        OptimalFill = True
+      end
+    end
+  end
+  object BZThreadTimer1: TBZThreadTimer
+    Interval = 100
+    KeepAlive = True
+    OnTimer = BZThreadTimer1Timer
+    left = 70
+    top = 50
+  end
+end

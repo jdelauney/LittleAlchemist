@@ -1,0 +1,654 @@
+object ExtendFilterExFrame: TExtendFilterExFrame
+  Left = 0
+  Height = 280
+  Top = 0
+  Width = 455
+  ClientHeight = 280
+  ClientWidth = 455
+  Constraints.MaxHeight = 280
+  Constraints.MinHeight = 50
+  Constraints.MinWidth = 455
+  TabOrder = 0
+  DesignLeft = 314
+  DesignTop = 1
+  object pnlTitle: TPanel
+    Left = 0
+    Height = 28
+    Top = 0
+    Width = 447
+    Align = alTop
+    BorderSpacing.Right = 8
+    ClientHeight = 28
+    ClientWidth = 447
+    Color = 4210752
+    ParentColor = False
+    TabOrder = 0
+    object imgTitleFilterGlyph: TImage
+      Left = 3
+      Height = 22
+      Top = 3
+      Width = 22
+      AntialiasingMode = amOn
+      Align = alLeft
+      BorderSpacing.Around = 2
+      Center = True
+      Transparent = True
+    end
+    object lblTitleFrame: TLabel
+      Left = 31
+      Height = 22
+      Top = 3
+      Width = 413
+      Align = alClient
+      BorderSpacing.Left = 4
+      BorderSpacing.Around = 2
+      Caption = 'lblTitleFrame'
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Style = [fsBold, fsUnderline]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object pnlParam1: TPanel
+    Left = 0
+    Height = 28
+    Top = 81
+    Width = 455
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 28
+    ClientWidth = 455
+    TabOrder = 1
+    Visible = False
+    object lblParam1: TLabel
+      Left = 2
+      Height = 24
+      Top = 2
+      Width = 104
+      Align = alLeft
+      Alignment = taRightJustify
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Caption = 'lblParam1 : '
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object fseFactor1: TFloatSpinEdit
+      Left = 367
+      Height = 24
+      Hint = 'Valeur exprimée en pourcentage'#13#10#13#10'Utilisez les flêches, la molette de la souris'#13#10'ou entrez directement une valeur.'#13#10'Pressez entrer pour valider'
+      Top = 2
+      Width = 60
+      Align = alRight
+      AutoSelect = False
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Increment = 0.1
+      MinValue = -100
+      OnEditingDone = fseFactor1EditingDone
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Value = 0
+    end
+    object tbFactor1: TTrackBar
+      Left = 108
+      Height = 28
+      Top = 0
+      Width = 257
+      Frequency = 50
+      Max = 100
+      Min = -100
+      OnChange = SliderChange
+      Position = 0
+      Align = alClient
+      OnMouseUp = tbFactor1MouseUp
+      TabOrder = 1
+    end
+    object btnResetParam1: TSpeedButton
+      Left = 429
+      Height = 24
+      Top = 2
+      Width = 24
+      Align = alRight
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DMMain.ImageList
+      ImageIndex = 55
+    end
+  end
+  object pnlParam2: TPanel
+    Left = 0
+    Height = 28
+    Top = 109
+    Width = 455
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 28
+    ClientWidth = 455
+    TabOrder = 2
+    Visible = False
+    object lblParam2: TLabel
+      Left = 2
+      Height = 24
+      Top = 2
+      Width = 104
+      Align = alLeft
+      Alignment = taRightJustify
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Caption = 'lblParam2 : '
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object fseFactor2: TFloatSpinEdit
+      Left = 368
+      Height = 24
+      Hint = 'Valeur exprimée en pourcentage'#13#10#13#10'Utilisez les flêches, la molette de la souris'#13#10'ou entrez directement une valeur.'#13#10'Pressez entrer pour valider'
+      Top = 2
+      Width = 59
+      Align = alRight
+      AutoSelect = False
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Increment = 0.1
+      MinValue = -100
+      OnEditingDone = DoNotifyChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Value = 0
+    end
+    object tbFactor2: TTrackBar
+      Tag = 1
+      Left = 108
+      Height = 28
+      Top = 0
+      Width = 258
+      Frequency = 50
+      Max = 360
+      Min = -360
+      OnChange = SliderChange
+      Position = 0
+      Align = alClient
+      OnMouseUp = tbFactor1MouseUp
+      TabOrder = 1
+    end
+    object btnResetParam2: TSpeedButton
+      Left = 429
+      Height = 24
+      Top = 2
+      Width = 24
+      Align = alRight
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DMMain.ImageList
+      ImageIndex = 55
+    end
+  end
+  object gbxCenter: TGroupBox
+    Left = 0
+    Height = 87
+    Top = 193
+    Width = 455
+    Align = alTop
+    Caption = 'Centre'
+    ClientHeight = 67
+    ClientWidth = 451
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+    Visible = False
+    object Panel1: TPanel
+      Left = 0
+      Height = 67
+      Top = 0
+      Width = 104
+      Align = alLeft
+      ClientHeight = 67
+      ClientWidth = 104
+      TabOrder = 0
+      object pnlChooseCenter: TPanel
+        Left = 2
+        Height = 63
+        Hint = 'Bouton gauche de la souris pour déplacer le centre'
+        Top = 2
+        Width = 100
+        Align = alClient
+        BorderSpacing.Around = 1
+        ParentBackground = False
+        ParentColor = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        OnMouseDown = pnlChooseCenterMouseDown
+        OnMouseMove = pnlChooseCenterMouseMove
+        OnMouseUp = pnlChooseCenterMouseUp
+        OnPaint = pnlChooseCenterPaint
+      end
+    end
+    object Panel2: TPanel
+      Left = 104
+      Height = 67
+      Top = 0
+      Width = 347
+      Align = alClient
+      ClientHeight = 67
+      ClientWidth = 347
+      TabOrder = 1
+      object pnlCenterX: TPanel
+        Left = 1
+        Height = 28
+        Top = 1
+        Width = 345
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 28
+        ClientWidth = 345
+        TabOrder = 0
+        object lblCenterX: TLabel
+          Left = 2
+          Height = 24
+          Top = 2
+          Width = 22
+          Align = alLeft
+          Alignment = taRightJustify
+          AutoSize = False
+          BorderSpacing.Around = 2
+          Caption = 'X : '
+          Font.Style = [fsBold]
+          Layout = tlCenter
+          ParentColor = False
+          ParentFont = False
+        end
+        object fseCenterX: TFloatSpinEdit
+          Left = 284
+          Height = 24
+          Hint = 'Valeur exprimée en pourcentage'#13#10#13#10'Utilisez les flêches, la molette de la souris'#13#10'ou entrez directement une valeur.'#13#10'Pressez entrer pour valider'
+          Top = 2
+          Width = 59
+          Align = alRight
+          AutoSelect = False
+          AutoSize = False
+          BorderSpacing.Around = 2
+          Increment = 0.1
+          MinValue = 0
+          OnEditingDone = DoNotifyChange
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Value = 0
+        end
+        object tbCenterX: TTrackBar
+          Tag = 4
+          Left = 26
+          Height = 28
+          Top = 0
+          Width = 256
+          Frequency = 50
+          Max = 100
+          OnChange = SliderChange
+          Position = 0
+          Align = alClient
+          OnMouseUp = tbFactor1MouseUp
+          TabOrder = 1
+        end
+      end
+      object pnlCenterY: TPanel
+        Left = 1
+        Height = 28
+        Top = 29
+        Width = 345
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 28
+        ClientWidth = 345
+        TabOrder = 1
+        object lblCenterY: TLabel
+          Left = 2
+          Height = 24
+          Top = 2
+          Width = 22
+          Align = alLeft
+          Alignment = taRightJustify
+          AutoSize = False
+          BorderSpacing.Around = 2
+          Caption = 'Y : '
+          Font.Style = [fsBold]
+          Layout = tlCenter
+          ParentColor = False
+          ParentFont = False
+        end
+        object fseCenterY: TFloatSpinEdit
+          Left = 284
+          Height = 24
+          Hint = 'Valeur exprimée en pourcentage'#13#10#13#10'Utilisez les flêches, la molette de la souris'#13#10'ou entrez directement une valeur.'#13#10'Pressez entrer pour valider'
+          Top = 2
+          Width = 59
+          Align = alRight
+          AutoSelect = False
+          AutoSize = False
+          BorderSpacing.Around = 2
+          Increment = 0.1
+          MinValue = 0
+          OnEditingDone = DoNotifyChange
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Value = 0
+        end
+        object tbCenterY: TTrackBar
+          Tag = 5
+          Left = 26
+          Height = 28
+          Top = 0
+          Width = 256
+          Frequency = 50
+          Max = 100
+          OnChange = SliderChange
+          Position = 0
+          Align = alClient
+          OnMouseUp = tbFactor1MouseUp
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object pnlParam3: TPanel
+    Left = 0
+    Height = 28
+    Top = 137
+    Width = 455
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 28
+    ClientWidth = 455
+    TabOrder = 4
+    Visible = False
+    object lblParam3: TLabel
+      Left = 2
+      Height = 24
+      Top = 2
+      Width = 104
+      Align = alLeft
+      Alignment = taRightJustify
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Caption = 'lblParam3 : '
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object fseFactor3: TFloatSpinEdit
+      Left = 368
+      Height = 24
+      Hint = 'Valeur exprimée en pourcentage'#13#10#13#10'Utilisez les flêches, la molette de la souris'#13#10'ou entrez directement une valeur.'#13#10'Pressez entrer pour valider'
+      Top = 2
+      Width = 59
+      Align = alRight
+      AutoSelect = False
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Increment = 0.1
+      MinValue = -100
+      OnEditingDone = DoNotifyChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Value = 0
+    end
+    object tbFactor3: TTrackBar
+      Tag = 2
+      Left = 108
+      Height = 28
+      Top = 0
+      Width = 258
+      Frequency = 50
+      Max = 100
+      Min = -100
+      OnChange = SliderChange
+      Position = 0
+      Align = alClient
+      OnMouseUp = tbFactor1MouseUp
+      TabOrder = 1
+    end
+    object btnResetParam3: TSpeedButton
+      Left = 429
+      Height = 24
+      Top = 2
+      Width = 24
+      Align = alRight
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DMMain.ImageList
+      ImageIndex = 55
+    end
+  end
+  object pnlParam4: TPanel
+    Left = 0
+    Height = 28
+    Top = 165
+    Width = 455
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 28
+    ClientWidth = 455
+    TabOrder = 5
+    Visible = False
+    object lblParam4: TLabel
+      Left = 2
+      Height = 24
+      Top = 2
+      Width = 104
+      Align = alLeft
+      Alignment = taRightJustify
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Caption = 'lblParam4 : '
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object fseFactor4: TFloatSpinEdit
+      Left = 368
+      Height = 24
+      Hint = 'Valeur exprimée en pourcentage'#13#10#13#10'Utilisez les flêches, la molette de la souris'#13#10'ou entrez directement une valeur.'#13#10'Pressez entrer pour valider'
+      Top = 2
+      Width = 59
+      Align = alRight
+      AutoSelect = False
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Increment = 0.1
+      MinValue = -100
+      OnEditingDone = DoNotifyChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Value = 0
+    end
+    object tbFactor4: TTrackBar
+      Tag = 3
+      Left = 108
+      Height = 28
+      Top = 0
+      Width = 258
+      Frequency = 50
+      Max = 100
+      Min = -100
+      OnChange = SliderChange
+      Position = 0
+      Align = alClient
+      OnMouseUp = tbFactor1MouseUp
+      TabOrder = 1
+    end
+    object btnResetParam4: TSpeedButton
+      Left = 429
+      Height = 24
+      Top = 2
+      Width = 24
+      Align = alRight
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DMMain.ImageList
+      ImageIndex = 55
+    end
+  end
+  object pnlOptions: TPanel
+    Left = 0
+    Height = 25
+    Top = 28
+    Width = 455
+    Align = alTop
+    ClientHeight = 25
+    ClientWidth = 455
+    TabOrder = 6
+    object Label1: TLabel
+      Left = 5
+      Height = 23
+      Top = 1
+      Width = 48
+      Align = alLeft
+      BorderSpacing.Left = 4
+      Caption = 'Lissage : '
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object cbxInterpolation: TComboBox
+      Left = 53
+      Height = 23
+      Top = 1
+      Width = 99
+      Align = alLeft
+      DropDownCount = 16
+      ItemHeight = 15
+      ItemIndex = 4
+      Items.Strings = (
+        'Defaut'
+        'Voisin'
+        'Bilineaire'
+        'Bicubique'
+        'Moyenne'
+        'Medianne'
+        'Min'
+        'Max'
+        'MinMax'
+        'SubSample'
+      )
+      OnChange = DoNotifyChange
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Moyenne'
+    end
+    object Label2: TLabel
+      Left = 206
+      Height = 23
+      Top = 1
+      Width = 60
+      Align = alLeft
+      BorderSpacing.Left = 4
+      Caption = 'Bordures : '
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object cbxEdgeAction: TComboBox
+      Left = 266
+      Height = 23
+      Top = 1
+      Width = 77
+      Align = alLeft
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        'Transparente'
+        'Etendre'
+        'Boucler'
+        ''
+      )
+      OnChange = DoNotifyChange
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'Etendre'
+    end
+    object cbxAALevel: TComboBox
+      Left = 152
+      Height = 23
+      Top = 1
+      Width = 50
+      Align = alLeft
+      DropDownCount = 16
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'x2'
+        'x3'
+        'x4'
+        'x5'
+        'x6'
+        'x7'
+        'x8'
+        'x12'
+        'x16'
+        'x32'
+      )
+      OnChange = cbxAALevelChange
+      Style = csDropDownList
+      TabOrder = 2
+      Text = 'x2'
+    end
+  end
+  object pnlParam0: TPanel
+    Left = 0
+    Height = 28
+    Top = 53
+    Width = 455
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 28
+    ClientWidth = 455
+    TabOrder = 7
+    Visible = False
+    object lblParam0: TLabel
+      Left = 2
+      Height = 24
+      Top = 2
+      Width = 104
+      Align = alLeft
+      Alignment = taRightJustify
+      AutoSize = False
+      BorderSpacing.Around = 2
+      Caption = 'lblParam0 : '
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object cbxParam0: TComboBox
+      Left = 108
+      Height = 23
+      Top = 1
+      Width = 345
+      Align = alLeft
+      BorderSpacing.Top = 1
+      DropDownCount = 16
+      ItemHeight = 15
+      OnChange = cbxParam0Change
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
+end

@@ -1,0 +1,33 @@
+object ScreenShootHelpForm: TScreenShootHelpForm
+  Left = 314
+  Height = 282
+  Top = 250
+  Width = 188
+  BorderStyle = bsToolWindow
+  Caption = 'Aide'
+  ClientHeight = 282
+  ClientWidth = 188
+  FormStyle = fsSystemStayOnTop
+  object pnlMagnifier: TPanel
+    Left = 4
+    Height = 120
+    Top = 4
+    Width = 180
+    Align = alTop
+    BorderSpacing.Around = 4
+    Color = clBlack
+    ParentColor = False
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 154
+    Top = 128
+    Width = 188
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clSkyBlue
+    ParentColor = False
+    TabOrder = 1
+  end
+end

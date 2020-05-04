@@ -1,0 +1,287 @@
+object DesaturateSettingFrame: TDesaturateSettingFrame
+  Left = 0
+  Height = 165
+  Top = 0
+  Width = 455
+  ClientHeight = 165
+  ClientWidth = 455
+  Constraints.MaxHeight = 165
+  Constraints.MinHeight = 165
+  Constraints.MinWidth = 455
+  TabOrder = 0
+  DesignLeft = 361
+  DesignTop = 18
+  object pnlTitle: TPanel
+    Left = 0
+    Height = 28
+    Top = 0
+    Width = 455
+    Align = alTop
+    ClientHeight = 28
+    ClientWidth = 455
+    Color = 4210752
+    ParentColor = False
+    TabOrder = 0
+    object imgTitleFilterGlyph: TImage
+      Left = 3
+      Height = 22
+      Top = 3
+      Width = 22
+      AntialiasingMode = amOn
+      Align = alLeft
+      BorderSpacing.Around = 2
+      Center = True
+      Transparent = True
+    end
+    object lblTitleFrame: TLabel
+      Left = 31
+      Height = 22
+      Top = 3
+      Width = 421
+      Align = alClient
+      BorderSpacing.Left = 4
+      BorderSpacing.Around = 2
+      Caption = 'Désaturation'
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Style = [fsBold, fsUnderline]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 85
+    Top = 80
+    Width = 455
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 85
+    ClientWidth = 455
+    TabOrder = 1
+    object pnlParam3: TPanel
+      Left = 0
+      Height = 26
+      Top = 52
+      Width = 455
+      Align = alTop
+      ClientHeight = 26
+      ClientWidth = 455
+      TabOrder = 0
+      object Label4: TLabel
+        Left = 3
+        Height = 24
+        Top = 1
+        Width = 70
+        Align = alLeft
+        Alignment = taRightJustify
+        AutoSize = False
+        BorderSpacing.Left = 2
+        BorderSpacing.Right = 2
+        Caption = 'Gamma : '
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object fseParam2: TFloatSpinEdit
+        Left = 75
+        Height = 24
+        Top = 1
+        Width = 379
+        Align = alClient
+        Enabled = False
+        Increment = 0.1
+        MaxValue = 10
+        MinValue = 1
+        OnEditingDone = DoNotifyChange
+        TabOrder = 0
+        Value = 1.7
+      end
+    end
+    object pnlParam2: TPanel
+      Left = 0
+      Height = 26
+      Top = 26
+      Width = 455
+      Align = alTop
+      ClientHeight = 26
+      ClientWidth = 455
+      TabOrder = 1
+      object Label3: TLabel
+        Left = 3
+        Height = 24
+        Top = 1
+        Width = 70
+        Align = alLeft
+        Alignment = taRightJustify
+        AutoSize = False
+        BorderSpacing.Left = 2
+        BorderSpacing.Right = 2
+        Caption = 'Constante : '
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object fseParam1: TFloatSpinEdit
+        Left = 75
+        Height = 24
+        Top = 1
+        Width = 379
+        Align = alClient
+        Enabled = False
+        MaxValue = 500
+        MinValue = 0
+        OnEditingDone = DoNotifyChange
+        TabOrder = 0
+        Value = 16
+      end
+    end
+    object pnlParam1: TPanel
+      Left = 0
+      Height = 26
+      Top = 0
+      Width = 455
+      Align = alTop
+      ClientHeight = 26
+      ClientWidth = 455
+      TabOrder = 2
+      object Label2: TLabel
+        Left = 3
+        Height = 24
+        Top = 1
+        Width = 70
+        Align = alLeft
+        Alignment = taRightJustify
+        AutoSize = False
+        BorderSpacing.Left = 2
+        BorderSpacing.Right = 2
+        Caption = 'Masque : '
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object cbxColorMask: TComboBox
+        Left = 75
+        Height = 23
+        Top = 1
+        Width = 377
+        Align = alClient
+        BorderSpacing.Right = 2
+        Enabled = False
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'Rouge'
+          'Vert'
+          'Bleu'
+          'Alpha'
+        )
+        OnChange = DoNotifyChange
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'Rouge'
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 52
+    Top = 28
+    Width = 455
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 52
+    ClientWidth = 455
+    TabOrder = 2
+    object pnlMethod: TPanel
+      Left = 0
+      Height = 52
+      Top = 0
+      Width = 235
+      Align = alLeft
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ClientHeight = 52
+      ClientWidth = 235
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 3
+        Height = 24
+        Top = 1
+        Width = 229
+        Align = alTop
+        AutoSize = False
+        BorderSpacing.Left = 2
+        BorderSpacing.Right = 2
+        Caption = 'Methode :'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object cbxDesaturateMethod: TComboBox
+        Left = 1
+        Height = 23
+        Top = 25
+        Width = 231
+        Align = alClient
+        BorderSpacing.Right = 2
+        DropDownCount = 10
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'Brillance'
+          'Luminosité'
+          'Luminance'
+          'Moyenne'
+          'Decompose Min'
+          'Decompose Max'
+          'Masque couleur'
+          'Dégradé'
+          'Puissance'
+          'Logarithmique'
+        )
+        OnSelect = rgGrayScaleMethodSelectionChanged
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'Brillance'
+      end
+    end
+    object gbxMatrix: TGroupBox
+      Left = 235
+      Height = 48
+      Top = 4
+      Width = 220
+      Align = alClient
+      BorderSpacing.Top = 4
+      Caption = 'Matrice de conversion'
+      ClientHeight = 28
+      ClientWidth = 216
+      TabOrder = 1
+      object cbxDesaturateMatrix: TComboBox
+        Left = 2
+        Height = 23
+        Top = 2
+        Width = 212
+        Align = alTop
+        BorderSpacing.Around = 2
+        DropDownCount = 12
+        Enabled = False
+        ItemHeight = 15
+        ItemIndex = 4
+        Items.Strings = (
+          'Aucune'
+          'NTSC'
+          'JPEG '
+          'Moyenne'
+          'PhotoShop'
+          'CIE Observer Ref 709'
+          'RMY'
+          'Canal rouge'
+          'Canal vert'
+          'Canal bleu '
+          'Canal Alpha'
+        )
+        OnChange = DoNotifyChange
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'PhotoShop'
+      end
+    end
+  end
+end
