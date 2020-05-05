@@ -7,4 +7,6 @@ Réaliser avec Lazarus/FPC et la bibliothèque BZScene
 
 ![LittleAlchemist](https://raw.githubusercontent.com/jdelauney/LittleAlchemist/master/screenshot.jpg)
 
+[Download BZScene / Téléchargement de BZScene](https://github.com/jdelauney/BZScene)
+
 
