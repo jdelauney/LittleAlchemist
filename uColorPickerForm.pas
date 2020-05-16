@@ -15,7 +15,7 @@ type
   { TColorWatchForm }
   TSelectedValue =(svRed, svGreen, svBlue, svHexa);
   TColorWatchForm = class(TForm)
-    ThrTimer : TBZThreadTimer;
+    ThrTimer : TTimer; //TBZThreadTimer;
     pnlTitleBar : TPanel;
     lblTitle : TLabel;
     btnToggleFrame : TSpeedButton;

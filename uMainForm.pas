@@ -19,6 +19,15 @@ type
   TFrameSettingType = (fstCommonFilter, fstCommonFilterEx, fstCommonFilterBlur, fstMotionFilterBlur);
 
   TMainForm = class(TForm)
+    Bevel1 : TBevel;
+    Bevel2 : TBevel;
+    Bevel3 : TBevel;
+    Bevel4 : TBevel;
+    Bevel5 : TBevel;
+    lblDimensions : TLabel;
+    lblFormatVersion : TLabel;
+    lblPixelFormat : TLabel;
+    lblColorFormat : TLabel;
     pnlStatus : TPanel;
     MainMenu : TMainMenu;
     mnuFile : TMenuItem;
@@ -642,6 +651,7 @@ begin
       FInternalFrame := CreateExtendFilterExFrame(pnlSettingsTool,'Filtre Instagram',bmp,False,'Mode', '', '', '', '',FImgResult.MaxWidth, FImgResult.MaxHeight, @HandleFilterChangeSettings, False);
       sl := TStringList.Create;
 
+
       sl.Add('1977');
       sl.Add('Aden');
       sl.Add('Amaro');
@@ -674,6 +684,7 @@ begin
       sl.Add('Peachy');
       sl.Add('Perpetua');
       sl.Add('Polaroid');
+      sl.Add('Polaroid II');
       sl.Add('Retro');
       sl.Add('Reyes');
       sl.Add('Rise');
@@ -1776,11 +1787,14 @@ end;
 
 procedure TMainForm.UpdateInformations;
 begin
-  with ImageView.Picture.Bitmap do
+  with FImgSource do //ImageView.Picture.Bitmap do
   begin
+    lblFormatVersion.Caption :=  DataFormatDesc.Name + ' - ' + DataFormatDesc.Version;
     With ImageDescription Do
     Begin
-      // Informations
+      lblDimensions.Caption := Width.ToString + 'x' + Height.ToString;
+      lblPixelFormat.Caption := BitsPerPixel.ToString + ' bits';
+      lblColorFormat.Caption := BZColorFormatDesc[ColorFormat].Name;
     end;
   end;
 end;
