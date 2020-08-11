@@ -5,7 +5,7 @@ object MainForm: TMainForm
   Width = 800
   AllowDropFiles = True
   Caption = 'Image Alchemist'
-  ClientHeight = 600
+  ClientHeight = 580
   ClientWidth = 800
   Constraints.MaxHeight = 600
   Constraints.MaxWidth = 800
@@ -17,6 +17,7 @@ object MainForm: TMainForm
   OnDropFiles = FormDropFiles
   OnShow = FormShow
   Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
   object pnlStatus: TPanel
     Left = 0
     Height = 26
@@ -198,17 +199,17 @@ object MainForm: TMainForm
     Left = 0
     Height = 542
     Top = 32
-    Width = 180
+    Width = 253
     Align = alLeft
     ClientHeight = 542
-    ClientWidth = 180
+    ClientWidth = 253
     Constraints.MinWidth = 180
     TabOrder = 1
     object ShellTreeView: TShellTreeView
       Left = 1
       Height = 162
       Top = 1
-      Width = 178
+      Width = 251
       Align = alTop
       AutoExpand = True
       FileSortType = fstNone
@@ -226,16 +227,16 @@ object MainForm: TMainForm
       Cursor = crVSplit
       Left = 1
       Height = 5
-      Top = 240
-      Width = 178
+      Top = 163
+      Width = 251
       Align = alTop
       ResizeAnchor = akTop
     end
     object ShellListView: TShellListView
       Left = 1
-      Height = 296
-      Top = 245
-      Width = 178
+      Height = 373
+      Top = 168
+      Width = 251
       Align = alClient
       Color = clDefault
       Mask = '*.bmp;*.gif;*.jpg;*.tga;*.xpm'
@@ -249,41 +250,6 @@ object MainForm: TMainForm
       OnFileAdded = ShellListViewFileAdded
       ObjectTypes = [otNonFolders]
       ShellTreeView = ShellTreeView
-    end
-    object Panel2: TPanel
-      Left = 1
-      Height = 77
-      Top = 163
-      Width = 178
-      Align = alTop
-      ClientHeight = 77
-      ClientWidth = 178
-      TabOrder = 3
-      object Edit1: TEdit
-        Left = 8
-        Height = 23
-        Top = 8
-        Width = 128
-        TabOrder = 0
-        Text = 'Edit1'
-      end
-      object Label1: TLabel
-        Left = 8
-        Height = 15
-        Top = 48
-        Width = 34
-        Caption = 'Label1'
-        ParentColor = False
-      end
-      object Button1: TButton
-        Left = 140
-        Height = 25
-        Top = 9
-        Width = 30
-        Caption = 'C'
-        OnClick = Button1Click
-        TabOrder = 1
-      end
     end
   end
   object cbMainMenu: TCoolBar
@@ -358,7 +324,7 @@ object MainForm: TMainForm
       end
       object ToolButton1: TToolButton
         Left = 49
-        Height = 24
+        Height = 8
         Top = 0
         Style = tbsSeparator
       end
@@ -411,7 +377,7 @@ object MainForm: TMainForm
       end
       object ToolButton8: TToolButton
         Left = 109
-        Height = 24
+        Height = 8
         Top = 0
         ImageIndex = 15
         Style = tbsSeparator
@@ -428,7 +394,7 @@ object MainForm: TMainForm
       end
       object ToolButton11: TToolButton
         Left = 165
-        Height = 24
+        Height = 8
         Top = 0
         Style = tbsSeparator
       end
@@ -506,7 +472,7 @@ object MainForm: TMainForm
       end
       object ToolButton3: TToolButton
         Left = 73
-        Height = 24
+        Height = 8
         Top = 0
         Caption = 'ToolButton3'
         Style = tbsSeparator
@@ -553,47 +519,47 @@ object MainForm: TMainForm
     end
   end
   object sptMainLeft: TSplitter
-    Left = 180
+    Left = 253
     Height = 542
     Top = 32
     Width = 5
   end
   object pnlMain: TPanel
-    Left = 185
+    Left = 258
     Height = 542
     Top = 32
-    Width = 615
+    Width = 542
     Align = alClient
     BevelOuter = bvNone
     ClientHeight = 542
-    ClientWidth = 615
+    ClientWidth = 542
     TabOrder = 4
     object pnlSettingsTool: TPanel
       Left = 4
-      Height = 100
-      Top = 438
-      Width = 607
+      Height = 240
+      Top = 298
+      Width = 534
       Align = alBottom
       BorderSpacing.Around = 4
       BevelOuter = bvNone
-      ClientHeight = 100
-      ClientWidth = 607
-      Constraints.MinHeight = 100
+      ClientHeight = 240
+      ClientWidth = 534
+      Constraints.MinHeight = 240
       Constraints.MinWidth = 455
       TabOrder = 0
       Visible = False
       object Panel1: TPanel
         Left = 0
         Height = 30
-        Top = 70
-        Width = 607
+        Top = 210
+        Width = 534
         Align = alBottom
         BevelOuter = bvNone
         ClientHeight = 30
-        ClientWidth = 607
+        ClientWidth = 534
         TabOrder = 0
         object btnApplyFilter: TBitBtn
-          Left = 419
+          Left = 346
           Height = 30
           Top = 0
           Width = 90
@@ -605,7 +571,7 @@ object MainForm: TMainForm
           TabOrder = 0
         end
         object btnCloseFilters: TBitBtn
-          Left = 509
+          Left = 436
           Height = 30
           Top = 0
           Width = 90
@@ -621,28 +587,28 @@ object MainForm: TMainForm
     end
     object pnlViewContainer: TPanel
       Left = 0
-      Height = 434
+      Height = 294
       Top = 0
-      Width = 607
+      Width = 534
       Align = alClient
       BevelOuter = bvNone
-      ClientHeight = 434
-      ClientWidth = 607
+      ClientHeight = 294
+      ClientWidth = 534
       ParentColor = False
       TabOrder = 1
       object sbScrollH: TScrollBar
         Left = 0
         Height = 17
-        Top = 417
-        Width = 607
+        Top = 277
+        Width = 534
         Align = alBottom
         PageSize = 0
         TabOrder = 0
         OnChange = sbScrollHChange
       end
       object sbScrollV: TScrollBar
-        Left = 590
-        Height = 417
+        Left = 517
+        Height = 277
         Top = 0
         Width = 17
         Align = alRight
@@ -653,21 +619,21 @@ object MainForm: TMainForm
       end
       object pnlImageView: TPanel
         Left = 0
-        Height = 417
+        Height = 277
         Top = 0
-        Width = 590
+        Width = 517
         Align = alClient
         BevelOuter = bvNone
-        ClientHeight = 417
-        ClientWidth = 590
+        ClientHeight = 277
+        ClientWidth = 517
         Color = clBlack
         ParentColor = False
         TabOrder = 2
         object ImageView: TBZImageViewer
           Left = 0
-          Height = 417
+          Height = 277
           Top = 0
-          Width = 590
+          Width = 517
           Align = alClient
           UseDockManager = False
           TabOrder = 0
@@ -690,12 +656,12 @@ object MainForm: TMainForm
       end
     end
     object pnlAddons: TPanel
-      Left = 607
-      Height = 434
+      Left = 534
+      Height = 294
       Top = 0
       Width = 8
       Align = alRight
-      ClientHeight = 434
+      ClientHeight = 294
       ClientWidth = 8
       Constraints.MaxWidth = 245
       Constraints.MinWidth = 8
@@ -703,7 +669,7 @@ object MainForm: TMainForm
       UseDockManager = False
       object sbAddons: TScrollBox
         Left = 1
-        Height = 432
+        Height = 292
         Hint = 'Déplacer ici les fenêtre pour les ancrer'#13#10'( Dès que le rectangle de sélection disparait relacher le bouton de la souris )'
         Top = 1
         Width = 6
@@ -717,7 +683,7 @@ object MainForm: TMainForm
         ChildSizing.ShrinkVertical = crsHomogenousSpaceResize
         ChildSizing.ControlsPerLine = 1
         DockSite = True
-        Color = 4194304
+        Color = 3684408
         ParentColor = False
         ParentShowHint = False
         ShowHint = True
@@ -729,7 +695,7 @@ object MainForm: TMainForm
     end
   end
   object MainMenu: TMainMenu
-    Left = 264
+    Left = 296
     Top = 104
     object mnuFile: TMenuItem
       Caption = '&Fichier'
@@ -1290,6 +1256,14 @@ object MainForm: TMainForm
       Category = 'ColorFilter'
       Caption = 'Rotation de la teinte'
       ImageIndex = 74
+      OnExecute = actInitFilterExecute
+    end
+    object actConvolutionFilter: TAction
+      Tag = 48
+      Category = 'OtherFilters'
+      Caption = 'Convolution'
+      Hint = 'Applique des filtres de convolution'
+      ImageIndex = 75
       OnExecute = actInitFilterExecute
     end
   end
@@ -2184,8 +2158,8 @@ object MainForm: TMainForm
     Top = 48
   end
   object ppmAutoFit: TPopupMenu
-    Left = 200
-    Top = 168
+    Left = 280
+    Top = 240
     object mniAutoFitOnlyBig: TMenuItem
       Tag = 1
       AutoCheck = True
@@ -2300,8 +2274,8 @@ object MainForm: TMainForm
   end
   object ppmFilters: TPopupMenu
     Images = DMMain.ImageList
-    Left = 480
-    Top = 168
+    Left = 384
+    Top = 240
     object MenuItem35: TMenuItem
       Caption = 'Adoucissement'
       object MenuItem49: TMenuItem
@@ -2354,7 +2328,7 @@ object MainForm: TMainForm
       Caption = '-'
     end
     object MenuItem41: TMenuItem
-      Caption = 'Convolution'
+      Action = actConvolutionFilter
     end
     object MenuItem40: TMenuItem
       Caption = 'Morphologie'
@@ -2366,10 +2340,15 @@ object MainForm: TMainForm
       Caption = 'Améliorations'
     end
     object MenuItem37: TMenuItem
-      Caption = 'Contours'
+      Caption = 'Segmentation'
+      ImageIndex = 77
+      object MenuItem61: TMenuItem
+        Caption = 'Détection des contours'
+      end
     end
     object MenuItem38: TMenuItem
       Caption = 'Artistiques'
+      ImageIndex = 85
       object MenuItem58: TMenuItem
         Action = actSepia
       end

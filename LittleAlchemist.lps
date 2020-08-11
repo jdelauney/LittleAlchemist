@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Release-Win64"/>
+    <Units Count="20">
+      <Unit0>
+        <Filename Value="LittleAlchemist.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="35"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="uMainForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="1375"/>
+        <CursorPos Y="1663"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="uErrorBoxForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UsageCount Value="35"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="uColorPickerForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ColorWatchForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="35"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="uResizeImageForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ResizeForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="35"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uScreenShootForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ScreenShootForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="35"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="uScreenShootHelpForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ScreenShootHelpForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="35"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="uCommonFilterExFrame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CommonFilterExFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <TopLine Value="25"/>
+        <CursorPos X="63" Y="162"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="uDesaturateSettingFrame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DesaturateSettingFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UsageCount Value="35"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="uDMMain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="uHistogramForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="HistogramForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="35"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uExtendFilterExFrame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ExtendFilterExFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UsageCount Value="35"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="uConvolutionFilterFrame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConvolutionFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="315"/>
+        <CursorPos X="47" Y="161"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\BZScene-Samples\Graphics\TestFilterConvolution\uMainForm.pas"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="404"/>
+        <CursorPos X="143" Y="419"/>
+        <UsageCount Value="14"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="c:\lazarusBeta\lcl\forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="168"/>
+        <CursorPos X="3" Y="155"/>
+        <UsageCount Value="13"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="c:\lazarusBeta\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3484"/>
+        <CursorPos Y="3498"/>
+        <UsageCount Value="10"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\..\Components\BZScene\Source\Image\BZBitmap.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="871"/>
+        <CursorPos X="15" Y="888"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="..\..\Components\BZScene\Source\Core\BZGraphic.pas"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="5169"/>
+        <CursorPos X="58" Y="5156"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="..\..\Components\BZScene\Source\Components\Controls\BZImageViewer.pas"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="640"/>
+        <CursorPos X="3" Y="727"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="..\..\Components\BZScene\Source\Utils\BZInterpolationFilters.pas"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="726"/>
+        <CursorPos X="46" Y="745"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit19>
+    </Units>
+    <JumpHistory Count="29" HistoryIndex="28">
+      <Position1>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1251" Column="223" TopLine="1239"/>
+      </Position1>
+      <Position2>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1250" Column="223" TopLine="1238"/>
+      </Position2>
+      <Position3>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1249" Column="223" TopLine="1237"/>
+      </Position3>
+      <Position4>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1248" Column="223" TopLine="1236"/>
+      </Position4>
+      <Position5>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1247" Column="223" TopLine="1235"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\Components\BZScene\Source\Image\BZBitmap.pas"/>
+        <Caret Line="882" Column="15" TopLine="868"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\..\Components\BZScene\Source\Image\BZBitmap.pas"/>
+        <Caret Line="979" Column="54" TopLine="972"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\..\Components\BZScene\Source\Image\BZBitmap.pas"/>
+        <Caret Line="987" Column="46" TopLine="972"/>
+      </Position8>
+      <Position9>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="436" TopLine="426"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\..\Components\BZScene\Source\Image\BZBitmap.pas"/>
+        <Caret Line="977" Column="16" TopLine="966"/>
+      </Position10>
+      <Position11>
+        <Filename Value="..\..\Components\BZScene\Source\Image\BZBitmap.pas"/>
+        <Caret Line="1710" Column="21" TopLine="1681"/>
+      </Position11>
+      <Position12>
+        <Filename Value="..\..\Components\BZScene\Source\Image\BZBitmap.pas"/>
+        <Caret Line="987" Column="28" TopLine="972"/>
+      </Position12>
+      <Position13>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="279" Column="53"/>
+      </Position13>
+      <Position14>
+        <Filename Value="..\..\Components\BZScene\Source\Components\Controls\BZImageViewer.pas"/>
+        <Caret Line="249" Column="18" TopLine="224"/>
+      </Position14>
+      <Position15>
+        <Filename Value="..\..\Components\BZScene\Source\Components\Controls\BZImageViewer.pas"/>
+        <Caret Line="960" Column="28" TopLine="866"/>
+      </Position15>
+      <Position16>
+        <Filename Value="..\..\Components\BZScene\Source\Core\BZGraphic.pas"/>
+        <Caret Line="2002" Column="15" TopLine="1988"/>
+      </Position16>
+      <Position17>
+        <Filename Value="..\..\Components\BZScene\Source\Components\Controls\BZImageViewer.pas"/>
+        <Caret Line="1137" Column="51" TopLine="1110"/>
+      </Position17>
+      <Position18>
+        <Filename Value="..\..\Components\BZScene\Source\Components\Controls\BZImageViewer.pas"/>
+        <Caret Line="227" Column="15" TopLine="212"/>
+      </Position18>
+      <Position19>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="279" Column="53" TopLine="32"/>
+      </Position19>
+      <Position20>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="325" Column="15" TopLine="309"/>
+      </Position20>
+      <Position21>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1662" Column="30" TopLine="1653"/>
+      </Position21>
+      <Position22>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="294" Column="15" TopLine="278"/>
+      </Position22>
+      <Position23>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1603" Column="5" TopLine="1448"/>
+      </Position23>
+      <Position24>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="325" Column="15" TopLine="309"/>
+      </Position24>
+      <Position25>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1658" Column="3" TopLine="1653"/>
+      </Position25>
+      <Position26>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="318" Column="15" TopLine="303"/>
+      </Position26>
+      <Position27>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1809" Column="35" TopLine="1805"/>
+      </Position27>
+      <Position28>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="325" Column="15" TopLine="309"/>
+      </Position28>
+      <Position29>
+        <Filename Value="uMainForm.pas"/>
+        <Caret Line="1664" Column="66" TopLine="1653"/>
+      </Position29>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

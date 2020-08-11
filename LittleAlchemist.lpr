@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, uMainForm, uResizeImageForm,
-  uScreenShootForm, uScreenShootHelpForm, uDMMain, uExtendFilterExFrame
+  uScreenShootForm, uScreenShootHelpForm, uDMMain, uExtendFilterExFrame, uConvolutionFilterFrame
   { you can add units after this };
 
 {$R *.res}

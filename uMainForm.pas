@@ -19,6 +19,7 @@ type
   TFrameSettingType = (fstCommonFilter, fstCommonFilterEx, fstCommonFilterBlur, fstMotionFilterBlur);
 
   TMainForm = class(TForm)
+    actConvolutionFilter : TAction;
     Bevel1 : TBevel;
     Bevel2 : TBevel;
     Bevel3 : TBevel;
@@ -28,6 +29,7 @@ type
     lblFormatVersion : TLabel;
     lblPixelFormat : TLabel;
     lblColorFormat : TLabel;
+    MenuItem61 : TMenuItem;
     pnlStatus : TPanel;
     MainMenu : TMainMenu;
     mnuFile : TMenuItem;
@@ -226,10 +228,6 @@ type
     MenuItem57 : TMenuItem;
     actInstagramFilter : TAction;
     MenuItem59 : TMenuItem;
-    Panel2 : TPanel;
-    Edit1 : TEdit;
-    Label1 : TLabel;
-    Button1 : TButton;
     actSepia : TAction;
     MenuItem58 : TMenuItem;
     actHueRotate : TAction;
@@ -279,7 +277,6 @@ type
     procedure FormDestroy(Sender : TObject);
     procedure btnCloseFiltersClick(Sender : TObject);
     procedure btnApplyFilterClick(Sender : TObject);
-    procedure Button1Click(Sender : TObject);
     procedure actScreenShotExecute(Sender : TObject);
 
   private
@@ -344,7 +341,7 @@ Uses
   //BZImageFilePNG, BZImageFileICO, etc...
   uErrorBoxForm, uColorPickerForm, uResizeImageForm,
   uCommonFilterExFrame, uDesaturateSettingFrame,
-  uExtendFilterExFrame,
+  uExtendFilterExFrame, uConvolutionFilterFrame,
   uHistogramForm,
   uScreenShootForm,
   BZLogger,
@@ -436,13 +433,6 @@ begin
   //UpdateHistogram;
 end;
 
-procedure TMainForm.Button1Click(Sender : TObject);
-Var
-  OutColor : TBZColor;
-begin
-  OutColor.Create(Edit1.Text);
-  Label1.Caption := OutColor.ToString;
-end;
 
 procedure TMainForm.actScreenShotExecute(Sender : TObject);
 begin
@@ -910,6 +900,20 @@ begin
       Bmp.Free;
     end;
 
+    48 : // Convolution
+    begin
+      bmp := TBitmap.Create;
+      DMMain.ImageList.GetBitmap(75, Bmp);
+      FInternalFrame := TConvolutionFrame.Create(self);
+      TConvolutionFrame(FInternalFrame).IconGlyph := Bmp;
+      TConvolutionFrame(FinternalFrame).OnParamChange := @HandleFilterChangeSettings;
+      //(pnlSettingsTool,'Adoucissement adaptatif',bmp,false,'', 'Rayon', 'Seuil', '', '',FImgResult.MaxWidth, FImgResult.MaxHeight, @HandleFilterChangeSettings, False);
+      pnlSettingsTool.Height := 30 + FInternalFrame.Constraints.MaxHeight;
+      FInternalFrame.Parent := pnlSettingsTool;
+      FInternalFrame.Align := alClient;
+      Bmp.Free;
+    end;
+
   end;
   pnlSettingsTool.Visible := True;
 end;
@@ -919,7 +923,8 @@ Var
   FilterExFrame : TCommonFilterExFrame;
   DesaturateFrame : TDesaturateSettingFrame;
   ExtendFilterExFrame : TExtendFilterExFrame;
-
+  ConvolFrame : TConvolutionFrame;
+  cnvMatrix : Array of Single;
 begin
   Screen.Cursor:= crHourGlass;
   FApplyFilter := True;
@@ -1221,6 +1226,19 @@ begin
       FImgResult.BlurFilter.OnProgress := @HandleOnImageProgress;
       //FImgResult.Transformation.CartesianToPolar;
       FImgResult.BlurFilter.ThresholdBlur(ExtendFilterExFrame.GetParam1, Round(ExtendFilterExFrame.GetParam2));
+      UpdateViews;
+      UpdateHistogram;
+    end;
+    48 : // Convoltion
+    begin
+      ConvolFrame := TConvolutionFrame(FInternalFrame);
+      FImgResult.FastCopy(FImgSource);
+      FImgResult.ConvolutionFilter.OnProgress := @HandleOnImageProgress;
+      //FImgResult.Transformation.CartesianToPolar;
+       ConvolFrame .GetConvolutionMatrix(cnvMatrix);
+      FImgResult.ConvolutionFilter.Convolve(cnvMatrix,ConvolFrame.GetMatrixSize,ConvolFrame.GetDivisor, ConvolFrame.GetBias, ConvolFrame.GetMode, ConvolFrame.GetApplyRed, ConvolFrame.GetApplyGreen, ConvolFrame.GetApplyBlue);
+      SetLength(cnvMatrix,0);
+      cnvMatrix := nil;
       UpdateViews;
       UpdateHistogram;
     end;
@@ -1574,7 +1592,7 @@ end;
 
 procedure TMainForm.UpdateViews;
 begin
-  ImageView.Picture.Bitmap.Assign(FImgResult);
+  //ImageView.Picture.Bitmap.Assign(FImgResult);
   HandleAutoFit(AutoFitMode);
   ImageView.Invalidate;
   UpdateImageViewScrollBars(False);
@@ -1582,7 +1600,7 @@ end;
 
 procedure TMainForm.UpdateHistogram;
 begin
-  if Assigned(HistogramForm) then HistogramForm.UpdateHistogram(FImgResult);
+  //if Assigned(HistogramForm) then HistogramForm.UpdateHistogram(FImgResult);
 end;
 
 procedure TMainForm.FormDropFiles(Sender : TObject; const FileNames : Array of String);
@@ -1641,9 +1659,11 @@ begin
     ShowHideImageProgress(true);
     Screen.Cursor := crHourGlass;
     FImgSource.OnProgress := @HandleOnImageProgress;
-    FImgSource.LoadFromFile(FileName);
-    FImgResult.Assign(FImgSource);
-    ImageView.Picture.Bitmap.SetSize(FImgSource.Width, FImgSource.Height);
+    ImageView.Picture.LoadFromFile(FileName);
+
+    //FImgSource.LoadFromFile(FileName);
+    //FImgResult.Assign(FImgSource);
+    //ImageView.Picture.Bitmap.SetSize(FImgSource.Width, FImgSource.Height);
    // ImageView.Picture.Bitmap.Layers.Transparent := ImageView.Transparent;
   Finally
     ff := FImgSource.FullFileName;
@@ -1787,7 +1807,7 @@ end;
 
 procedure TMainForm.UpdateInformations;
 begin
-  with FImgSource do //ImageView.Picture.Bitmap do
+  with ImageView.Picture.Bitmap do//FImgSource do //ImageView.Picture.Bitmap do
   begin
     lblFormatVersion.Caption :=  DataFormatDesc.Name + ' - ' + DataFormatDesc.Version;
     With ImageDescription Do

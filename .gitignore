@@ -1,1 +1,6 @@
 ﻿*.lrj
+bin
+lib/Release-Win64
+lib
+backup
+*.po
